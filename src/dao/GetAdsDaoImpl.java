@@ -2,18 +2,12 @@ package dao;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Locale;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import DefaultNamespace.MainProxy;
-import beans.Ad;
 import beans.YearBook;
 
 public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
@@ -22,6 +16,7 @@ public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
 		super(daoFactory);
 	}
 	
+	//Loading of the ads by using the address (street, town and postcode)
 	@Override
    	public YearBook getAdsByAddress(int yearBook, String street, String town, String postCode) throws DaoException{
 		MainProxy mainProxy = new MainProxy();
@@ -44,6 +39,7 @@ public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
     	return yearBookBean;
 	}
 	
+	//Loading of the ads from a category
 	@Override
 	public YearBook getAdsByCategory(int yearBook, String category) throws DaoException{
 		MainProxy mainProxy = new MainProxy();
@@ -67,6 +63,7 @@ public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
     	return yearBookBean;
 	}
 	
+	//Loading of the ads thanks of the ads' names
 	@Override
 	public YearBook getAdsByName(int yearBook, String name) throws DaoException{
 		MainProxy mainProxy = new MainProxy();

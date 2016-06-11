@@ -43,7 +43,7 @@ public class GetAds extends HttpServlet {
 		request.setAttribute("yearBook", this.yearBook);
 		if(action!= null){
 			switch(action){
-				case "getByName" :{
+				case "getByName" :{ //Loading of the ads thanks of the ads' names
 					String name = request.getParameter("adName");
 					try {
 						YearBook y = this.getAdsDao.getAdsByName(yearBook, name);
@@ -57,12 +57,10 @@ public class GetAds extends HttpServlet {
 					break;
 				}
 				
-				case "getByCategory" :{
+				case "getByCategory" :{ //Loading of the ads from a category
 					String category = request.getParameter("category");
-					System.out.println(category);
 					try {
 						YearBook y = this.getAdsDao.getAdsByCategory(yearBook, category);
-						System.out.println(y.getAds());
 						request.setAttribute("yearbook", y);
 						this.getServletContext().getRequestDispatcher(DISPLAY_ADS_JSP).forward(request, response);
 					} catch (DaoException e) {
@@ -73,7 +71,7 @@ public class GetAds extends HttpServlet {
 					break;
 				}
 				
-				case "getByAddress":{
+				case "getByAddress":{ //Loading of the ads by using the address (street, town and postcode)
 					String street = request.getParameter("street");
 					String town = request.getParameter("town");
 					String postCode = request.getParameter("postCode");
@@ -89,9 +87,14 @@ public class GetAds extends HttpServlet {
 				}
 				default:{
 					try {
+						//Loading of all the postcodes, streets names, towns names,ads names and categories from the database
 						ArrayList<String> postCodes = this.getAdsDao.getPostCodes(this.yearBook);
 						ArrayList<String> streetsNames = this.getAdsDao.getStreetsNames(this.yearBook);
 						ArrayList<String> townsNames = this.getAdsDao.getTownsNames(this.yearBook);
+						YearBook yearBookBean = this.getAdsDao.getAdsNames(this.yearBook);
+						ArrayList<String> categoriesNames = this.getAdsDao.getCategoriesNames(this.yearBook);
+						request.setAttribute("categoriesNames", categoriesNames);
+						request.setAttribute("yearBookBean", yearBookBean);
 						request.setAttribute("postCodes", postCodes);
 						request.setAttribute("streetsNames", streetsNames);
 						request.setAttribute("townsNames", townsNames);
@@ -106,6 +109,8 @@ public class GetAds extends HttpServlet {
 		}
 		else{
 			try {
+				
+				//Load all the postcodes, streets, towns,ads and categories from the database
 				ArrayList<String> postCodes = this.getAdsDao.getPostCodes(this.yearBook);
 				ArrayList<String> streetsNames = this.getAdsDao.getStreetsNames(this.yearBook);
 				ArrayList<String> townsNames = this.getAdsDao.getTownsNames(this.yearBook);

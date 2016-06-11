@@ -16,6 +16,7 @@ public class AdDaoImpl implements AdDao {
 	public AdDaoImpl(DaoFactory daoFactory) {
     }
 	
+	//Loading of all categories
     @Override
     public ArrayList<String> getCategoriesNames(int yearBook) throws DaoException {
     	MainProxy mainProxy = new MainProxy();
@@ -38,6 +39,7 @@ public class AdDaoImpl implements AdDao {
 
 	}
     
+  //Loading of all postcodes
     @Override
     public ArrayList<String> getPostCodes(int yearBook) throws DaoException {
     	MainProxy mainProxy = new MainProxy();   
@@ -60,6 +62,7 @@ public class AdDaoImpl implements AdDao {
 
 	}
     
+  //Loading of all streets names
     @Override
     public ArrayList<String> getStreetsNames(int yearBook) throws DaoException {
     	MainProxy mainProxy = new MainProxy();  
@@ -82,6 +85,7 @@ public class AdDaoImpl implements AdDao {
 
 	}
     
+    //Loading of all towns names
     @Override
     public ArrayList<String> getTownsNames(int yearBook) throws DaoException {
     	MainProxy mainProxy = new MainProxy();  
@@ -104,6 +108,7 @@ public class AdDaoImpl implements AdDao {
 
 	}
     
+    //Loading of all ads names
     @Override
     public YearBook getAdsNames(int yearBook) throws DaoException {
     	MainProxy mainProxy = new MainProxy();    	
