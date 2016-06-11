@@ -6,10 +6,6 @@ h1, h2, h3, h4, h5{
     cursor: pointer;
 }
 
-.alert-danger{
-	margin-top : 10px;
-}
-
 .glyphicon-exclamation-sign{
 	margin-right : 5px;
 }

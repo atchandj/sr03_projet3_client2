@@ -349,6 +349,48 @@ if(getAdsByAddress118mtemp == null){
         <%
 }
 break;
+case 129:
+        gotMethod = true;
+        String yearBook_38id=  request.getParameter("yearBook132");
+        int yearBook_38idTemp  = Integer.parseInt(yearBook_38id);
+        String category_39id=  request.getParameter("category134");
+            java.lang.String category_39idTemp = null;
+        if(!category_39id.equals("")){
+         category_39idTemp  = category_39id;
+        }
+        java.lang.String getAdsByCategory129mtemp = sampleMainProxyid.getAdsByCategory(yearBook_38idTemp,category_39idTemp);
+if(getAdsByCategory129mtemp == null){
+%>
+<%=getAdsByCategory129mtemp %>
+<%
+}else{
+        String tempResultreturnp130 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAdsByCategory129mtemp));
+        %>
+        <%= tempResultreturnp130 %>
+        <%
+}
+break;
+case 136:
+        gotMethod = true;
+        String yearBook_40id=  request.getParameter("yearBook139");
+        int yearBook_40idTemp  = Integer.parseInt(yearBook_40id);
+        String name_41id=  request.getParameter("name141");
+            java.lang.String name_41idTemp = null;
+        if(!name_41id.equals("")){
+         name_41idTemp  = name_41id;
+        }
+        java.lang.String getAdsByName136mtemp = sampleMainProxyid.getAdsByName(yearBook_40idTemp,name_41idTemp);
+if(getAdsByName136mtemp == null){
+%>
+<%=getAdsByName136mtemp %>
+<%
+}else{
+        String tempResultreturnp137 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAdsByName136mtemp));
+        %>
+        <%= tempResultreturnp137 %>
+        <%
+}
+break;
 }
 } catch (Exception e) { 
 %>

@@ -22,6 +22,8 @@
 <LI><A HREF="Input.jsp?method=106" TARGET="inputs"> updateCategory(java.lang.String,java.lang.String)</A></LI>
 <LI><A HREF="Input.jsp?method=113" TARGET="inputs"> getCategoriesNames(int)</A></LI>
 <LI><A HREF="Input.jsp?method=118" TARGET="inputs"> getAdsByAddress(int,java.lang.String,java.lang.String,java.lang.String)</A></LI>
+<LI><A HREF="Input.jsp?method=129" TARGET="inputs"> getAdsByCategory(int,java.lang.String)</A></LI>
+<LI><A HREF="Input.jsp?method=136" TARGET="inputs"> getAdsByName(int,java.lang.String)</A></LI>
 </UL>
 </BODY>
 </HTML>

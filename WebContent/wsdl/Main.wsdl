@@ -5,18 +5,105 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
    <import namespace="http://dao"/>
-   <element name="dropAd">
+   <element name="updateCategory">
     <complexType>
      <sequence>
-      <element name="yearBook" type="xsd:int"/>
-      <element name="adName" type="xsd:string"/>
+      <element name="oldCategoryName" type="xsd:string"/>
+      <element name="newCategoryName" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="dropAdResponse">
+   <element name="updateCategoryResponse">
     <complexType/>
    </element>
    <element name="fault" type="tns1:DaoException"/>
+   <element name="addCategory">
+    <complexType>
+     <sequence>
+      <element name="categoryName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addCategoryResponse">
+    <complexType/>
+   </element>
+   <element name="modifyAd">
+    <complexType>
+     <sequence>
+      <element name="yearBook" type="xsd:int"/>
+      <element name="oldAdName" type="xsd:string"/>
+      <element name="oldStreet" type="xsd:string"/>
+      <element name="oldTown" type="xsd:string"/>
+      <element name="oldPostCode" type="xsd:string"/>
+      <element name="oldCategory" type="xsd:string"/>
+      <element name="newAdName" type="xsd:string"/>
+      <element name="newPhone" type="xsd:string"/>
+      <element name="newStreet" type="xsd:string"/>
+      <element name="newTown" type="xsd:string"/>
+      <element name="newPostCode" type="xsd:string"/>
+      <element name="newCategory" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifyAdResponse">
+    <complexType/>
+   </element>
+   <element name="getCategoriesNames">
+    <complexType>
+     <sequence>
+      <element name="yearBook" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCategoriesNamesResponse">
+    <complexType>
+     <sequence>
+      <element name="getCategoriesNamesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPostCodes">
+    <complexType>
+     <sequence>
+      <element name="yearBook" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPostCodesResponse">
+    <complexType>
+     <sequence>
+      <element name="getPostCodesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStreetsNames">
+    <complexType>
+     <sequence>
+      <element name="yearBook" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStreetsNamesResponse">
+    <complexType>
+     <sequence>
+      <element name="getStreetsNamesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTownsNames">
+    <complexType>
+     <sequence>
+      <element name="yearBook" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTownsNamesResponse">
+    <complexType>
+     <sequence>
+      <element name="getTownsNamesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="dropCategory">
     <complexType>
      <sequence>
@@ -27,19 +114,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="dropCategoryResponse">
     <complexType/>
    </element>
-   <element name="getYearBook">
+   <element name="dropAd">
     <complexType>
      <sequence>
       <element name="yearBook" type="xsd:int"/>
+      <element name="adName" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="getYearBookResponse">
-    <complexType>
-     <sequence>
-      <element name="getYearBookReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
+   <element name="dropAdResponse">
+    <complexType/>
    </element>
    <element name="getAdsNames">
     <complexType>
@@ -52,6 +136,20 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="getAdsNamesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getYearBook">
+    <complexType>
+     <sequence>
+      <element name="yearBook" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getYearBookResponse">
+    <complexType>
+     <sequence>
+      <element name="getYearBookReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -86,121 +184,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="addAdResponse">
     <complexType/>
    </element>
-   <element name="modifyAd">
-    <complexType>
-     <sequence>
-      <element name="yearBook" type="xsd:int"/>
-      <element name="oldAdName" type="xsd:string"/>
-      <element name="oldStreet" type="xsd:string"/>
-      <element name="oldTown" type="xsd:string"/>
-      <element name="oldPostCode" type="xsd:string"/>
-      <element name="oldCategory" type="xsd:string"/>
-      <element name="newAdName" type="xsd:string"/>
-      <element name="newPhone" type="xsd:string"/>
-      <element name="newStreet" type="xsd:string"/>
-      <element name="newTown" type="xsd:string"/>
-      <element name="newPostCode" type="xsd:string"/>
-      <element name="newCategory" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="modifyAdResponse">
-    <complexType/>
-   </element>
-   <element name="getTownsNames">
-    <complexType>
-     <sequence>
-      <element name="yearBook" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getTownsNamesResponse">
-    <complexType>
-     <sequence>
-      <element name="getTownsNamesReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getStreetsNames">
-    <complexType>
-     <sequence>
-      <element name="yearBook" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getStreetsNamesResponse">
-    <complexType>
-     <sequence>
-      <element name="getStreetsNamesReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getPostCodes">
-    <complexType>
-     <sequence>
-      <element name="yearBook" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getPostCodesResponse">
-    <complexType>
-     <sequence>
-      <element name="getPostCodesReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="addCategory">
-    <complexType>
-     <sequence>
-      <element name="categoryName" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="addCategoryResponse">
-    <complexType/>
-   </element>
-   <element name="updateCategory">
-    <complexType>
-     <sequence>
-      <element name="oldCategoryName" type="xsd:string"/>
-      <element name="newCategoryName" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="updateCategoryResponse">
-    <complexType/>
-   </element>
-   <element name="getCategoriesNames">
-    <complexType>
-     <sequence>
-      <element name="yearBook" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getCategoriesNamesResponse">
-    <complexType>
-     <sequence>
-      <element name="getCategoriesNamesReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getAdsByAddress">
-    <complexType>
-     <sequence>
-      <element name="yearBook" type="xsd:int"/>
-      <element name="street" type="xsd:string"/>
-      <element name="town" type="xsd:string"/>
-      <element name="postCode" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getAdsByAddressResponse">
-    <complexType>
-     <sequence>
-      <element name="getAdsByAddressReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="getAdsByCategory">
     <complexType>
      <sequence>
@@ -231,6 +214,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="getAdsByAddress">
+    <complexType>
+     <sequence>
+      <element name="yearBook" type="xsd:int"/>
+      <element name="street" type="xsd:string"/>
+      <element name="town" type="xsd:string"/>
+      <element name="postCode" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAdsByAddressResponse">
+    <complexType>
+     <sequence>
+      <element name="getAdsByAddressReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
   <schema elementFormDefault="qualified" targetNamespace="http://dao" xmlns="http://www.w3.org/2001/XMLSchema">
    <complexType name="DaoException">
@@ -255,9 +255,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="dropCategoryResponse">
+   <wsdl:message name="addCategoryRequest">
 
-      <wsdl:part element="impl:dropCategoryResponse" name="parameters">
+      <wsdl:part element="impl:addCategory" name="parameters">
 
       </wsdl:part>
 
@@ -271,9 +271,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="addCategoryRequest">
+   <wsdl:message name="dropCategoryResponse">
 
-      <wsdl:part element="impl:addCategory" name="parameters">
+      <wsdl:part element="impl:dropCategoryResponse" name="parameters">
 
       </wsdl:part>
 
@@ -319,17 +319,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="getAdsNamesResponse">
+   <wsdl:message name="getCategoriesNamesResponse">
 
-      <wsdl:part element="impl:getAdsNamesResponse" name="parameters">
+      <wsdl:part element="impl:getCategoriesNamesResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getCategoriesNamesResponse">
+   <wsdl:message name="getAdsNamesResponse">
 
-      <wsdl:part element="impl:getCategoriesNamesResponse" name="parameters">
+      <wsdl:part element="impl:getAdsNamesResponse" name="parameters">
 
       </wsdl:part>
 
@@ -375,17 +375,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="getAdRequest">
+   <wsdl:message name="updateCategoryRequest">
 
-      <wsdl:part element="impl:getAd" name="parameters">
+      <wsdl:part element="impl:updateCategory" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="updateCategoryRequest">
+   <wsdl:message name="getAdRequest">
 
-      <wsdl:part element="impl:updateCategory" name="parameters">
+      <wsdl:part element="impl:getAd" name="parameters">
 
       </wsdl:part>
 
@@ -505,13 +505,109 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="Main">
 
-      <wsdl:operation name="dropAd">
+      <wsdl:operation name="updateCategory">
 
-         <wsdl:input message="impl:dropAdRequest" name="dropAdRequest">
+         <wsdl:input message="impl:updateCategoryRequest" name="updateCategoryRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:dropAdResponse" name="dropAdResponse">
+         <wsdl:output message="impl:updateCategoryResponse" name="updateCategoryResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCategory">
+
+         <wsdl:input message="impl:addCategoryRequest" name="addCategoryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addCategoryResponse" name="addCategoryResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyAd">
+
+         <wsdl:input message="impl:modifyAdRequest" name="modifyAdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modifyAdResponse" name="modifyAdResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCategoriesNames">
+
+         <wsdl:input message="impl:getCategoriesNamesRequest" name="getCategoriesNamesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCategoriesNamesResponse" name="getCategoriesNamesResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPostCodes">
+
+         <wsdl:input message="impl:getPostCodesRequest" name="getPostCodesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPostCodesResponse" name="getPostCodesResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStreetsNames">
+
+         <wsdl:input message="impl:getStreetsNamesRequest" name="getStreetsNamesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStreetsNamesResponse" name="getStreetsNamesResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTownsNames">
+
+         <wsdl:input message="impl:getTownsNamesRequest" name="getTownsNamesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTownsNamesResponse" name="getTownsNamesResponse">
 
        </wsdl:output>
 
@@ -537,13 +633,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getYearBook">
+      <wsdl:operation name="dropAd">
 
-         <wsdl:input message="impl:getYearBookRequest" name="getYearBookRequest">
+         <wsdl:input message="impl:dropAdRequest" name="dropAdRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getYearBookResponse" name="getYearBookResponse">
+         <wsdl:output message="impl:dropAdResponse" name="dropAdResponse">
 
        </wsdl:output>
 
@@ -560,6 +656,22 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:getAdsNamesResponse" name="getAdsNamesResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getYearBook">
+
+         <wsdl:input message="impl:getYearBookRequest" name="getYearBookRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getYearBookResponse" name="getYearBookResponse">
 
        </wsdl:output>
 
@@ -601,134 +713,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="modifyAd">
-
-         <wsdl:input message="impl:modifyAdRequest" name="modifyAdRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:modifyAdResponse" name="modifyAdResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getTownsNames">
-
-         <wsdl:input message="impl:getTownsNamesRequest" name="getTownsNamesRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getTownsNamesResponse" name="getTownsNamesResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getStreetsNames">
-
-         <wsdl:input message="impl:getStreetsNamesRequest" name="getStreetsNamesRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getStreetsNamesResponse" name="getStreetsNamesResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getPostCodes">
-
-         <wsdl:input message="impl:getPostCodesRequest" name="getPostCodesRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getPostCodesResponse" name="getPostCodesResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addCategory">
-
-         <wsdl:input message="impl:addCategoryRequest" name="addCategoryRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:addCategoryResponse" name="addCategoryResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="updateCategory">
-
-         <wsdl:input message="impl:updateCategoryRequest" name="updateCategoryRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:updateCategoryResponse" name="updateCategoryResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getCategoriesNames">
-
-         <wsdl:input message="impl:getCategoriesNamesRequest" name="getCategoriesNamesRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getCategoriesNamesResponse" name="getCategoriesNamesResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getAdsByAddress">
-
-         <wsdl:input message="impl:getAdsByAddressRequest" name="getAdsByAddressRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getAdsByAddressResponse" name="getAdsByAddressResponse">
-
-       </wsdl:output>
-
-         <wsdl:fault message="impl:DaoException" name="DaoException">
-
-       </wsdl:fault>
-
-      </wsdl:operation>
-
       <wsdl:operation name="getAdsByCategory">
 
          <wsdl:input message="impl:getAdsByCategoryRequest" name="getAdsByCategoryRequest">
@@ -761,23 +745,183 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getAdsByAddress">
+
+         <wsdl:input message="impl:getAdsByAddressRequest" name="getAdsByAddressRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAdsByAddressResponse" name="getAdsByAddressResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:DaoException" name="DaoException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="MainSoapBinding" type="impl:Main">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="dropAd">
+      <wsdl:operation name="updateCategory">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="dropAdRequest">
+         <wsdl:input name="updateCategoryRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="dropAdResponse">
+         <wsdl:output name="updateCategoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addCategory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addCategoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addCategoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifyAd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifyAdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifyAdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCategoriesNames">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCategoriesNamesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCategoriesNamesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPostCodes">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPostCodesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPostCodesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStreetsNames">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStreetsNamesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStreetsNamesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTownsNames">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTownsNamesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTownsNamesResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -815,17 +959,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getYearBook">
+      <wsdl:operation name="dropAd">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getYearBookRequest">
+         <wsdl:input name="dropAdRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getYearBookResponse">
+         <wsdl:output name="dropAdResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -850,6 +994,30 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="getAdsNamesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getYearBook">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getYearBookRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getYearBookResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -911,198 +1079,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="modifyAd">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="modifyAdRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="modifyAdResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getTownsNames">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getTownsNamesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getTownsNamesResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getStreetsNames">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getStreetsNamesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getStreetsNamesResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getPostCodes">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getPostCodesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getPostCodesResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addCategory">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="addCategoryRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="addCategoryResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="updateCategory">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="updateCategoryRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="updateCategoryResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getCategoriesNames">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getCategoriesNamesRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getCategoriesNamesResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getAdsByAddress">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getAdsByAddressRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getAdsByAddressResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-         <wsdl:fault name="DaoException">
-
-            <wsdlsoap:fault name="DaoException" use="literal"/>
-
-         </wsdl:fault>
-
-      </wsdl:operation>
-
       <wsdl:operation name="getAdsByCategory">
 
          <wsdlsoap:operation soapAction=""/>
@@ -1138,6 +1114,30 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="getAdsByNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="DaoException">
+
+            <wsdlsoap:fault name="DaoException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAdsByAddress">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAdsByAddressRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAdsByAddressResponse">
 
             <wsdlsoap:body use="literal"/>
 
