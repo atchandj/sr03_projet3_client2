@@ -38,6 +38,7 @@ public class GetAds extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String errorMessage = null;
 		String action = request.getParameter("paction");
 		request.setAttribute("yearBook", this.yearBook);
@@ -131,6 +132,7 @@ public class GetAds extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
 
