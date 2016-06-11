@@ -44,7 +44,31 @@ public class GetAds extends HttpServlet {
 		if(action!= null){
 			switch(action){
 				case "getByName" :{
-					this.getServletContext().getRequestDispatcher(GET_ADS_JSP).forward(request, response);
+					String name = request.getParameter("adName");
+					try {
+						YearBook y = this.getAdsDao.getAdsByName(yearBook, name);
+						request.setAttribute("yearbook", y);
+						this.getServletContext().getRequestDispatcher(DISPLAY_ADS_JSP).forward(request, response);
+					} catch (DaoException e) {
+						errorMessage = e.getMessage();
+						request.setAttribute("errorMessage", errorMessage);
+						this.getServletContext().getRequestDispatcher(GET_ADS_JSP).forward(request, response);
+					}					
+					break;
+				}
+				
+				case "getByCategory" :{
+					String category = request.getParameter("category");
+					try {
+						YearBook y = this.getAdsDao.getAdsByCategory(yearBook, category);
+						System.out.println(y.getAds());
+						request.setAttribute("yearbook", y);
+						this.getServletContext().getRequestDispatcher(DISPLAY_ADS_JSP).forward(request, response);
+					} catch (DaoException e) {
+						errorMessage = e.getMessage();
+						request.setAttribute("errorMessage", errorMessage);
+						this.getServletContext().getRequestDispatcher(GET_ADS_JSP).forward(request, response);
+					}
 					break;
 				}
 				
@@ -54,7 +78,6 @@ public class GetAds extends HttpServlet {
 					String postCode = request.getParameter("postCode");
 					try {
 						YearBook y = this.getAdsDao.getAdsByAddress(yearBook, street, town, postCode);
-						System.out.println(y.getAds());
 						request.setAttribute("yearbook", y);
 						this.getServletContext().getRequestDispatcher(DISPLAY_ADS_JSP).forward(request, response);
 					} catch (DaoException e) {

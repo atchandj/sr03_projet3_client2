@@ -19,9 +19,25 @@
 			<h3> Recherche d'une annonce : </h3>
 			<div class="row">
 				<div class="col-md-4 col-lg-offset-4 " >
+					<c:if test="${ !empty errorMessage }">
+				  	    <div class="alert alert-danger" role="alert"> 
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span class="sr-only">Error: </span><c:out value="${ errorMessage }" />
+						</div>
+					</c:if>
+					
+					<c:if test="${ !empty successMessage }">
+				  	    <div class="alert alert-success" role="alert"> 
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+							<span class="sr-only">Success: </span><c:out value="${ successMessage }" />
+						</div>
+					</c:if>	
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 						<%@ include file="/WEB-INF/search_by_address.jsp" %>
 						<%@ include file="/WEB-INF/search_by_name.jsp" %>
+						<%@ include file="/WEB-INF/search_by_category.jsp" %>
 					</div>
 				</div>
 			</div>

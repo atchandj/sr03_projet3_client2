@@ -128,5 +128,17 @@ public class MainProxy implements DefaultNamespace.Main {
     return main.getAdsByAddress(yearBook, street, town, postCode);
   }
   
+  public java.lang.String getAdsByCategory(int yearBook, java.lang.String category) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getAdsByCategory(yearBook, category);
+  }
+  
+  public java.lang.String getAdsByName(int yearBook, java.lang.String name) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getAdsByName(yearBook, name);
+  }
+  
   
 }

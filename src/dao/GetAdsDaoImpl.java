@@ -43,4 +43,50 @@ public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
     	
     	return yearBookBean;
 	}
+	
+	@Override
+	public YearBook getAdsByCategory(int yearBook, String category) throws DaoException{
+		MainProxy mainProxy = new MainProxy();
+		ObjectMapper objectMapper = new ObjectMapper();
+		YearBook yearBookBean = null;
+		String dataJSON = null;    	
+    	try {
+    		dataJSON = mainProxy.getAdsByCategory(yearBook, category);
+    		yearBookBean = objectMapper.readValue(dataJSON, YearBook.class);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			throw new DaoException(e.getMessage());
+		} catch (JsonParseException e) {
+			throw new DaoException(e.getMessage());
+		} catch (JsonMappingException e) {
+			throw new DaoException(e.getMessage());
+		} catch (IOException e) {
+			throw new DaoException(e.getMessage());
+		}
+    	
+    	return yearBookBean;
+	}
+	
+	@Override
+	public YearBook getAdsByName(int yearBook, String name) throws DaoException{
+		MainProxy mainProxy = new MainProxy();
+		ObjectMapper objectMapper = new ObjectMapper();
+		YearBook yearBookBean = null;
+		String dataJSON = null;    	
+    	try {
+    		dataJSON = mainProxy.getAdsByName(yearBook, name);
+    		yearBookBean = objectMapper.readValue(dataJSON, YearBook.class);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			throw new DaoException(e.getMessage());
+		} catch (JsonParseException e) {
+			throw new DaoException(e.getMessage());
+		} catch (JsonMappingException e) {
+			throw new DaoException(e.getMessage());
+		} catch (IOException e) {
+			throw new DaoException(e.getMessage());
+		}
+    	
+    	return yearBookBean;
+	}
 }

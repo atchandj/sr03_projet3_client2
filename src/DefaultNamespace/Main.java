@@ -22,4 +22,6 @@ public interface Main extends java.rmi.Remote {
     public void updateCategory(java.lang.String oldCategoryName, java.lang.String newCategoryName) throws java.rmi.RemoteException, dao.DaoException;
     public java.lang.String getCategoriesNames(int yearBook) throws java.rmi.RemoteException, dao.DaoException;
     public java.lang.String getAdsByAddress(int yearBook, java.lang.String street, java.lang.String town, java.lang.String postCode) throws java.rmi.RemoteException, dao.DaoException;
+    public java.lang.String getAdsByCategory(int yearBook, java.lang.String category) throws java.rmi.RemoteException, dao.DaoException;
+    public java.lang.String getAdsByName(int yearBook, java.lang.String name) throws java.rmi.RemoteException, dao.DaoException;
 }

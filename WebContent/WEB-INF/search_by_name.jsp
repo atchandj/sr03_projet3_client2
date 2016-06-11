@@ -12,7 +12,7 @@
 	</div>
 	<div id="collapseName" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 		<div class="panel-body">
-			<form method="post" action='<c:url value="/get_ads"/>' accept-charset="ISO-8859-1">
+			<form method="get" action='<c:url value="/get_ads"/>' accept-charset="ISO-8859-1">
 				<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 					<label class="control-label" for="adName">Nom de l'annonce :</label>
 					<input list="adsNames" name="adName" class="form-control" placeholder="Nom de l'annonce" autofocus required>
@@ -27,22 +27,6 @@
 				<input type="hidden" name="paction" value='getByName' />
 				<input type="hidden" name="year_book" value='<c:out value="${ yearBook }"/>' />
 				<input type="submit" class="btn btn-default" value="Rechercher"/>
-			
-				<c:if test="${ !empty errorMessage }">
-			  	    <div class="alert alert-danger" role="alert"> 
-						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-						<span class="sr-only">Error: </span><c:out value="${ errorMessage }" />
-					</div>
-				</c:if>
-				
-				<c:if test="${ !empty successMessage }">
-			  	    <div class="alert alert-success" role="alert"> 
-						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-						<span class="sr-only">Success: </span><c:out value="${ successMessage }" />
-					</div>
-				</c:if>	
 			</form>
 		</div>
 	</div>
