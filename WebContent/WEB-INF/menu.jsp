@@ -11,9 +11,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">			
 			<ul class="nav navbar-nav">
-				<li <c:if test="${ !empty param.superUserHome }">class="active"</c:if> ><a href="<c:url value="#"/>" title="Vers 1"><span class="glyphicon glyphicon-home"></span> 1</a></li>
-				<li <c:if test="${ !empty param.usersManagement }">class="active"</c:if> ><a href="<c:url value="#"/>" title="Vers 2"><span class="glyphicon glyphicon-user"></span> 2</a></li>
-				<li <c:if test="${ !empty param.formsManagement }">class="active"</c:if> ><a href="<c:url value="#"/>" title="Vers 3"><span class="glyphicon glyphicon-file"></span> 3</a></li>
+				<li <c:if test="${ !empty param.getAds }">class="active"</c:if> ><a href="<c:url value="/get_ads"/>" title="Recherche d'annonce par addresse">Recherche d'annonce</a></li>
 			</ul>
 		</div>
 	</div>

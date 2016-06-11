@@ -61,14 +61,14 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">oldCategoryName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="oldCategoryName16" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">yearBook:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="yearBook16" SIZE=20></TD>
 </TR>
 </TABLE>
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">newCategoryName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="newCategoryName18" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">adName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="adName18" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -84,8 +84,8 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">categoryName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="categoryName23" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">category:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="category23" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -294,8 +294,8 @@ valid = false;
 <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">category:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="category89" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">yearBook:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="yearBook89" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>
@@ -315,10 +315,113 @@ valid = false;
 <TD ALIGN="left"><INPUT TYPE="TEXT" NAME="yearBook94" SIZE=20></TD>
 </TR>
 </TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 96:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
 <TABLE>
 <TR>
-<TD COLSPAN="1" ALIGN="LEFT">adName:</TD>
-<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="adName96" SIZE=20></TD>
+<TD COLSPAN="1" ALIGN="LEFT">yearBook:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="yearBook99" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 101:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">categoryName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="categoryName104" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 106:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">oldCategoryName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="oldCategoryName109" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">newCategoryName:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="newCategoryName111" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 113:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">yearBook:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="yearBook116" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 118:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">yearBook:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="yearBook121" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">street:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="street123" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">town:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="town125" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">postCode:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="postCode127" SIZE=20></TD>
 </TR>
 </TABLE>
 <BR>

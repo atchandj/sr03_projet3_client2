@@ -63,38 +63,35 @@ if(getMain10mtemp == null){
 break;
 case 13:
         gotMethod = true;
-        String oldCategoryName_1id=  request.getParameter("oldCategoryName16");
-            java.lang.String oldCategoryName_1idTemp = null;
-        if(!oldCategoryName_1id.equals("")){
-         oldCategoryName_1idTemp  = oldCategoryName_1id;
+        String yearBook_1id=  request.getParameter("yearBook16");
+        int yearBook_1idTemp  = Integer.parseInt(yearBook_1id);
+        String adName_2id=  request.getParameter("adName18");
+            java.lang.String adName_2idTemp = null;
+        if(!adName_2id.equals("")){
+         adName_2idTemp  = adName_2id;
         }
-        String newCategoryName_2id=  request.getParameter("newCategoryName18");
-            java.lang.String newCategoryName_2idTemp = null;
-        if(!newCategoryName_2id.equals("")){
-         newCategoryName_2idTemp  = newCategoryName_2id;
-        }
-        sampleMainProxyid.updateCategory(oldCategoryName_1idTemp,newCategoryName_2idTemp);
+        sampleMainProxyid.dropAd(yearBook_1idTemp,adName_2idTemp);
 break;
 case 20:
         gotMethod = true;
-        String categoryName_3id=  request.getParameter("categoryName23");
-            java.lang.String categoryName_3idTemp = null;
-        if(!categoryName_3id.equals("")){
-         categoryName_3idTemp  = categoryName_3id;
+        String category_3id=  request.getParameter("category23");
+            java.lang.String category_3idTemp = null;
+        if(!category_3id.equals("")){
+         category_3idTemp  = category_3id;
         }
-        sampleMainProxyid.addCategory(categoryName_3idTemp);
+        sampleMainProxyid.dropCategory(category_3idTemp);
 break;
 case 25:
         gotMethod = true;
         String yearBook_4id=  request.getParameter("yearBook28");
         int yearBook_4idTemp  = Integer.parseInt(yearBook_4id);
-        java.lang.String getAdsNames25mtemp = sampleMainProxyid.getAdsNames(yearBook_4idTemp);
-if(getAdsNames25mtemp == null){
+        java.lang.String getYearBook25mtemp = sampleMainProxyid.getYearBook(yearBook_4idTemp);
+if(getYearBook25mtemp == null){
 %>
-<%=getAdsNames25mtemp %>
+<%=getYearBook25mtemp %>
 <%
 }else{
-        String tempResultreturnp26 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAdsNames25mtemp));
+        String tempResultreturnp26 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getYearBook25mtemp));
         %>
         <%= tempResultreturnp26 %>
         <%
@@ -104,13 +101,13 @@ case 30:
         gotMethod = true;
         String yearBook_5id=  request.getParameter("yearBook33");
         int yearBook_5idTemp  = Integer.parseInt(yearBook_5id);
-        java.lang.String getYearBook30mtemp = sampleMainProxyid.getYearBook(yearBook_5idTemp);
-if(getYearBook30mtemp == null){
+        java.lang.String getAdsNames30mtemp = sampleMainProxyid.getAdsNames(yearBook_5idTemp);
+if(getAdsNames30mtemp == null){
 %>
-<%=getYearBook30mtemp %>
+<%=getAdsNames30mtemp %>
 <%
 }else{
-        String tempResultreturnp31 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getYearBook30mtemp));
+        String tempResultreturnp31 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAdsNames30mtemp));
         %>
         <%= tempResultreturnp31 %>
         <%
@@ -236,23 +233,121 @@ case 59:
 break;
 case 86:
         gotMethod = true;
-        String category_27id=  request.getParameter("category89");
-            java.lang.String category_27idTemp = null;
-        if(!category_27id.equals("")){
-         category_27idTemp  = category_27id;
-        }
-        sampleMainProxyid.dropCategory(category_27idTemp);
+        String yearBook_27id=  request.getParameter("yearBook89");
+        int yearBook_27idTemp  = Integer.parseInt(yearBook_27id);
+        java.lang.String getTownsNames86mtemp = sampleMainProxyid.getTownsNames(yearBook_27idTemp);
+if(getTownsNames86mtemp == null){
+%>
+<%=getTownsNames86mtemp %>
+<%
+}else{
+        String tempResultreturnp87 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getTownsNames86mtemp));
+        %>
+        <%= tempResultreturnp87 %>
+        <%
+}
 break;
 case 91:
         gotMethod = true;
         String yearBook_28id=  request.getParameter("yearBook94");
         int yearBook_28idTemp  = Integer.parseInt(yearBook_28id);
-        String adName_29id=  request.getParameter("adName96");
-            java.lang.String adName_29idTemp = null;
-        if(!adName_29id.equals("")){
-         adName_29idTemp  = adName_29id;
+        java.lang.String getStreetsNames91mtemp = sampleMainProxyid.getStreetsNames(yearBook_28idTemp);
+if(getStreetsNames91mtemp == null){
+%>
+<%=getStreetsNames91mtemp %>
+<%
+}else{
+        String tempResultreturnp92 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getStreetsNames91mtemp));
+        %>
+        <%= tempResultreturnp92 %>
+        <%
+}
+break;
+case 96:
+        gotMethod = true;
+        String yearBook_29id=  request.getParameter("yearBook99");
+        int yearBook_29idTemp  = Integer.parseInt(yearBook_29id);
+        java.lang.String getPostCodes96mtemp = sampleMainProxyid.getPostCodes(yearBook_29idTemp);
+if(getPostCodes96mtemp == null){
+%>
+<%=getPostCodes96mtemp %>
+<%
+}else{
+        String tempResultreturnp97 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getPostCodes96mtemp));
+        %>
+        <%= tempResultreturnp97 %>
+        <%
+}
+break;
+case 101:
+        gotMethod = true;
+        String categoryName_30id=  request.getParameter("categoryName104");
+            java.lang.String categoryName_30idTemp = null;
+        if(!categoryName_30id.equals("")){
+         categoryName_30idTemp  = categoryName_30id;
         }
-        sampleMainProxyid.dropAd(yearBook_28idTemp,adName_29idTemp);
+        sampleMainProxyid.addCategory(categoryName_30idTemp);
+break;
+case 106:
+        gotMethod = true;
+        String oldCategoryName_31id=  request.getParameter("oldCategoryName109");
+            java.lang.String oldCategoryName_31idTemp = null;
+        if(!oldCategoryName_31id.equals("")){
+         oldCategoryName_31idTemp  = oldCategoryName_31id;
+        }
+        String newCategoryName_32id=  request.getParameter("newCategoryName111");
+            java.lang.String newCategoryName_32idTemp = null;
+        if(!newCategoryName_32id.equals("")){
+         newCategoryName_32idTemp  = newCategoryName_32id;
+        }
+        sampleMainProxyid.updateCategory(oldCategoryName_31idTemp,newCategoryName_32idTemp);
+break;
+case 113:
+        gotMethod = true;
+        String yearBook_33id=  request.getParameter("yearBook116");
+        int yearBook_33idTemp  = Integer.parseInt(yearBook_33id);
+        java.lang.String getCategoriesNames113mtemp = sampleMainProxyid.getCategoriesNames(yearBook_33idTemp);
+if(getCategoriesNames113mtemp == null){
+%>
+<%=getCategoriesNames113mtemp %>
+<%
+}else{
+        String tempResultreturnp114 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getCategoriesNames113mtemp));
+        %>
+        <%= tempResultreturnp114 %>
+        <%
+}
+break;
+case 118:
+        gotMethod = true;
+        String yearBook_34id=  request.getParameter("yearBook121");
+        int yearBook_34idTemp  = Integer.parseInt(yearBook_34id);
+        String street_35id=  request.getParameter("street123");
+            java.lang.String street_35idTemp = null;
+        if(!street_35id.equals("")){
+         street_35idTemp  = street_35id;
+        }
+        String town_36id=  request.getParameter("town125");
+            java.lang.String town_36idTemp = null;
+        if(!town_36id.equals("")){
+         town_36idTemp  = town_36id;
+        }
+        String postCode_37id=  request.getParameter("postCode127");
+            java.lang.String postCode_37idTemp = null;
+        if(!postCode_37id.equals("")){
+         postCode_37idTemp  = postCode_37id;
+        }
+        java.lang.String getAdsByAddress118mtemp = sampleMainProxyid.getAdsByAddress(yearBook_34idTemp,street_35idTemp,town_36idTemp,postCode_37idTemp);
+if(getAdsByAddress118mtemp == null){
+%>
+<%=getAdsByAddress118mtemp %>
+<%
+}else{
+        String tempResultreturnp119 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAdsByAddress118mtemp));
+        %>
+        <%= tempResultreturnp119 %>
+        <%
+}
 break;
 }
 } catch (Exception e) { 

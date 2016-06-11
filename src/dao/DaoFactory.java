@@ -8,4 +8,8 @@ public class DaoFactory {
         return instance;
     }
     
+    public GetAdsDao getAddAdDao() {
+        return new GetAdsDaoImpl(this);
+    }
+    
 }
