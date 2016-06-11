@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>                        
 			</button>
-			<a class="navbar-brand" href="<c:url value="#"/>">Client 1 projet 3 SR03</a>
+			<a class="navbar-brand" href="<c:url value="#"/>">Client 2 projet 3 SR03</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">			
 			<ul class="nav navbar-nav">
