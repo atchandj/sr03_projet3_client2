@@ -10,13 +10,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import DefaultNamespace.MainProxy;
 import beans.YearBook;
 
+/* The implementation of the class witch interacts with the database 
+ * to get ads from a year book.
+ * */
 public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
 
 	public GetAdsDaoImpl(DaoFactory daoFactory) {
 		super(daoFactory);
 	}
 	
-	//Loading of the ads by using the address (street, town and postcode)
+	/*Loading of the ads by using the address (street, town and post code)*/
 	@Override
    	public YearBook getAdsByAddress(int yearBook, String street, String town, String postCode) throws DaoException{
 		MainProxy mainProxy = new MainProxy();
@@ -39,7 +42,7 @@ public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
     	return yearBookBean;
 	}
 	
-	//Loading of the ads from a category
+	/*Loading of the ads from a category*/
 	@Override
 	public YearBook getAdsByCategory(int yearBook, String category) throws DaoException{
 		MainProxy mainProxy = new MainProxy();
@@ -63,7 +66,7 @@ public class GetAdsDaoImpl extends AdDaoImpl implements GetAdsDao{
     	return yearBookBean;
 	}
 	
-	//Loading of the ads thanks of the ads' names
+	/*Loading of the ads thanks of the ads' names*/
 	@Override
 	public YearBook getAdsByName(int yearBook, String name) throws DaoException{
 		MainProxy mainProxy = new MainProxy();

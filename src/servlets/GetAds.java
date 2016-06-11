@@ -14,6 +14,7 @@ import dao.DaoException;
 import dao.DaoFactory;
 import dao.GetAdsDao;
 
+/* The servlet which allows the user to search an ad by address, name or category.*/
 public class GetAds extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String GET_ADS_JSP = "/WEB-INF/get_ads.jsp";
