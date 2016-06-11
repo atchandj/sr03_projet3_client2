@@ -12,7 +12,7 @@
 	</div>
 	<div id="collapseCategory" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 		<div class="panel-body">
-			<form method="get" action='<c:url value="/get_ads"/>' accept-charset="ISO-8859-1">
+			<form method="get" action='<c:url value="/get_ads"/>'>
 				<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 					<label class="control-label" for="category">Catégorie :</label>
 					<input list=categoriesNames name="category" class="form-control" placeholder="Catégorie" autofocus required>
