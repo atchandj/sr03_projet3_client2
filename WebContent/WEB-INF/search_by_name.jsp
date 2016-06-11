@@ -12,7 +12,7 @@
 	</div>
 	<div id="collapseName" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 		<div class="panel-body">
-			<form method="get" action='<c:url value="/get_ads"/>' accept-charset="ISO-8859-1">
+			<form method="get" action='<c:url value="/get_ads"/>'>
 				<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 					<label class="control-label" for="adName">Nom de l'annonce :</label>
 					<input list="adsNames" name="adName" class="form-control" placeholder="Nom de l'annonce" autofocus required>
