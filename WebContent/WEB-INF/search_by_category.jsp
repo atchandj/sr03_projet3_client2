@@ -24,7 +24,7 @@
 						</c:if>
 					</datalist>
 				</div>
-				<input type="hidden" name="paction" value='getByName' />
+				<input type="hidden" name="paction" value='getByCategory' />
 				<input type="hidden" name="year_book" value='<c:out value="${ yearBook }"/>' />
 				<input type="submit" class="btn btn-default" value="Rechercher"/>
 			</form>

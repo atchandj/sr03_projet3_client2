@@ -59,6 +59,7 @@ public class GetAds extends HttpServlet {
 				
 				case "getByCategory" :{
 					String category = request.getParameter("category");
+					System.out.println(category);
 					try {
 						YearBook y = this.getAdsDao.getAdsByCategory(yearBook, category);
 						System.out.println(y.getAds());
