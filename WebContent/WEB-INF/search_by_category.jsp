@@ -3,7 +3,7 @@
 
 
 <div class="panel panel-default">
-	<div class="panel-heading" role="tab" id="headingTwo">
+	<div class="panel-heading" role="tab" id="headingThree">
 		<h4 class="panel-title">
 			<a class="collapsed" role="button" data-toggle="collapse"
 				data-parent="#accordion" href="#collapseCategory" aria-expanded="false"
